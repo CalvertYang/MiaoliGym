@@ -1,0 +1,183 @@
+﻿@model MiaoliGym.Models.PurchaseRecord
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PurchaseRecord</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.No)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Source)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Source)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Budget)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Budget)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SellingPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SellingPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Vendor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vendor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Responsible)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Responsible)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContractExpire)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContractExpire)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BailPaidOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BailPaidOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BailSendbackDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BailSendbackDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BailCheckNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BailCheckNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AcceptingDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AcceptingDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Retentions)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Retentions)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RetentionsPaidOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RetentionsPaidOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RetentionsExpire)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RetentionsExpire)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RetentionsSendbackDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RetentionsSendbackDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RetentionsCheckNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RetentionsCheckNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastEditor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastEditor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastUpdateOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastUpdateOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Deleted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Deleted)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
