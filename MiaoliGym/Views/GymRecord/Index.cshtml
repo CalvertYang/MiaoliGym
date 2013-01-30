@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MiaoliGym.Models.GymRecord>
+@{
+    ViewBag.Title = "館場租用紀錄";
+}
+
+
+<table class="table table-condensed table-hover">
+    <thead>
+       <tr>
+           <th>@Html.DropDownList("Gyms", ViewData["Gyms"] as SelectList, "館場名稱", new { @class="span2"})</th>
+           <th>@Html.DisplayNameFor(model => model.First().Event)</th>
+           <th>@Html.DisplayNameFor(model => model.First().ApprovalNo)</th>
+           <th>@Html.DisplayNameFor(model => model.First().LendUnit)</th>
+           <th>@Html.DisplayNameFor(model => model.First().Contacter)</th>
+           <th>@Html.DisplayNameFor(model => model.First().ContactPhone)</th>
+           <th>@Html.DisplayNameFor(model => model.First().LendDateStart)</th>
+           <th>@Html.DisplayNameFor(model => model.First().LendDateEnd)</th>
+           @if ((bool)ViewBag.IsManager)
+           { 
+            <th>@Html.ActionLink("新增", "Create")</th>
+           }
+       </tr>
+    </thead>
+    <tbody>
+     @if(Model != null)
+     {
+        foreach (var item in Model)
+        { 
+            <tr>
+            <td>@item.Gym.Name</td>
+            <td>@item.Event</td>
+            <td>@item.ApprovalNo</td>
+            <td>@item.LendUnit</td>
+            <td>@item.Contacter</td>
+            <td>@item.ContactPhone</td>
+            <td>@item.LendDateStart.ToShortDateString()</td>
+            <td>@item.LendDateEnd.ToShortDateString()</td>
+            @if ((bool)ViewBag.IsManager)
+            { 
+                <th>@Html.ActionLink("編輯", "Edit", new { Id = item.Id }, new { style="width:40px;display:inline-block;"})</th>
+                <th>@Html.ActionLink("刪除", "Delete", new { Id = item.Id},new { style="width:40px;display:inline-block;"})</th>
+            }
+            </tr>
+        }
+     }
+    </tbody>
+</table>

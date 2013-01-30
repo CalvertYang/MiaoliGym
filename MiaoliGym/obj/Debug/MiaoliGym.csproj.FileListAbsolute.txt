@@ -39,3 +39,4 @@ C:\Projects\MiaoliGym\MiaoliGym\bin\zh-Hant\System.Web.WebPages.Razor.resources.
 C:\Projects\MiaoliGym\MiaoliGym\obj\Debug\MiaoliGym.dll
 C:\Projects\MiaoliGym\MiaoliGym\obj\Debug\MiaoliGym.pdb
 C:\Projects\MiaoliGym\MiaoliGym\obj\Debug\MiaoliGym.csprojResolveAssemblyReference.cache
+C:\Projects\MiaoliGym\MiaoliGym\bin\WebActivator.dll
