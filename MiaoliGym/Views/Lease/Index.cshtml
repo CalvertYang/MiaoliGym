@@ -1,0 +1,135 @@
+﻿@model IEnumerable<MiaoliGym.Models.Lease>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayableRent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PayMode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HydropowerPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HydropowerPaidOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BailPaidOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptCreateOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnGovOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastEditor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdateOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Unit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayableRent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PayMode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HydropowerPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HydropowerPaidOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BailPaidOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptCreateOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReturnGovOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastEditor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdateOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -40,3 +40,7 @@ C:\Projects\MiaoliGym\MiaoliGym\obj\Debug\MiaoliGym.dll
 C:\Projects\MiaoliGym\MiaoliGym\obj\Debug\MiaoliGym.pdb
 C:\Projects\MiaoliGym\MiaoliGym\obj\Debug\MiaoliGym.csprojResolveAssemblyReference.cache
 C:\Projects\MiaoliGym\MiaoliGym\bin\WebActivator.dll
+C:\Projects\MiaoliGym\MiaoliGym\bin\PagedList.dll
+C:\Projects\MiaoliGym\MiaoliGym\bin\PagedList.Mvc.dll
+C:\Projects\MiaoliGym\MiaoliGym\bin\PagedList.xml
+C:\Projects\MiaoliGym\MiaoliGym\bin\PagedList.Mvc.xml

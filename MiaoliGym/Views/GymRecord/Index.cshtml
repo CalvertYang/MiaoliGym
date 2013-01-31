@@ -1,20 +1,37 @@
-﻿@model IEnumerable<MiaoliGym.Models.GymRecord>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<MiaoliGym.Models.GymRecord>
+
 @{
     ViewBag.Title = "館場租用紀錄";
+    var data = Model as IPagedList<MiaoliGym.Models.GymRecord>;
 }
 
-
+<form class="form-search">
+    @Html.DropDownList("s", ViewData["SearchColumns"] as SelectList, "--請選擇--", new { @class = "span2"})
+    <div class="input-append">
+        <input type="text" class="span2 search-query">
+        <button type="submit" class="btn">搜尋</button>
+    </div>
+</form>
 <table class="table table-condensed table-hover">
     <thead>
        <tr>
-           <th>@Html.DropDownList("Gyms", ViewData["Gyms"] as SelectList, "館場名稱", new { @class="span2"})</th>
+           <th>
+               @using (Html.BeginForm("Index", "GymRecord", FormMethod.Get, new { id = "SelectedGymId" }))
+               {
+                   @Html.DropDownList("g", ViewData["Gyms"] as SelectList, "館場名稱", new { @class = "span2"})
+               }
+           </th>
            <th>@Html.DisplayNameFor(model => model.First().Event)</th>
            <th>@Html.DisplayNameFor(model => model.First().ApprovalNo)</th>
            <th>@Html.DisplayNameFor(model => model.First().LendUnit)</th>
            <th>@Html.DisplayNameFor(model => model.First().Contacter)</th>
            <th>@Html.DisplayNameFor(model => model.First().ContactPhone)</th>
-           <th>@Html.DisplayNameFor(model => model.First().LendDateStart)</th>
-           <th>@Html.DisplayNameFor(model => model.First().LendDateEnd)</th>
+           @{var columnNameDateStart = Html.DisplayNameFor(model => model.First().LendDateStart);}
+           <th>@Html.ActionLink(columnNameDateStart.ToString(),"SortStartDate")</th>
+           @{var columnNameDateEnd = Html.DisplayNameFor(model => model.First().LendDateEnd);}
+           <th>@Html.ActionLink(columnNameDateEnd.ToString(),"SortEndDate")</th>
            @if ((bool)ViewBag.IsManager)
            { 
             <th>@Html.ActionLink("新增", "Create")</th>
@@ -28,7 +45,7 @@
         { 
             <tr>
             <td>@item.Gym.Name</td>
-            <td>@item.Event</td>
+            <td>@Html.ActionLink(item.Event,"Detail",new {Id = item.Id})</td>
             <td>@item.ApprovalNo</td>
             <td>@item.LendUnit</td>
             <td>@item.Contacter</td>
@@ -45,3 +62,17 @@
      }
     </tbody>
 </table>
+
+@Html.PagedListPager(list: data, generatePageUrl: page => Url.Action("Index",new{p = page}))
+
+@section scripts {
+
+<script type="text/javascript">
+  $(function() {
+      $("#g").change(function () {
+          $('#SelectedGymId').submit();
+    });
+  });
+</script>
+
+}
