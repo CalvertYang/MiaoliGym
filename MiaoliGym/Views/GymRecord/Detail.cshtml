@@ -1,0 +1,160 @@
+﻿@model MiaoliGym.Models.GymRecord
+@{
+    ViewBag.Title = "館場租借詳細資料";
+}
+<h4>一般資料</h4>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.Gym.Name)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.Gym.Name))
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.Event)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.Event)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.ApprovalNo)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.ApprovalNo)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.Contacter)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.Contacter)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.ContactPhone)
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.LendDateStart)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.LendDateStart)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.LendDateEnd)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.LendDateEnd)
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            @Html.DisplayNameFor(model => model.LendUnit)
+        </div>
+        <div class="span6">
+            @Html.DisplayFor(model => model.LendUnit)
+        </div>
+    </div>
+</div>
+
+
+<h4>繳費項目</h4>
+<div class="container">
+    <table class="table table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().Name)</th>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().PayableDate)</th>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().Price)</th>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().PaidOn)</th>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().IsPaid)</th>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().ReceiptNo)</th>
+                @* 用 Helper 調整顯示若無日期則顯示未繳費或未建立 *@
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().ReceiptCreateOn)</th>
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().ReturnGovOn)</th>  
+                <th>@Html.DisplayNameFor(model => model.PayItems.First().Comment)</th>  
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PayItems)
+            { 
+                <tr>
+                    <td>@Html.DisplayFor(i => item.Name)</td>
+                    <td>@Html.DisplayFor(i => item.PayableDate)</td>
+                    <td>@Html.DisplayFor(i => item.Price)</td>
+                    <td>@Html.DisplayFor(i => item.PaidOn)</td>
+                    <td>@Html.DisplayFor(i => item.IsPaid)</td>
+                    <td>@Html.DisplayFor(i => item.ReceiptNo)</td>
+                    <td>@Html.DisplayFor(i => item.ReceiptCreateOn)</td>
+                    <td>@Html.DisplayFor(i => item.ReturnGovOn)</td>
+                    <td>@Html.DisplayFor(i => item.Comment)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<h4>免繳費項目</h4>
+<div class="container">
+    <table class="table table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FreeItems.First().Name)</th>
+                <th>@Html.DisplayNameFor(model => model.FreeItems.First().ApprovalNo)</th>
+                <th>@Html.DisplayNameFor(model => model.FreeItems.First().Comment)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.FreeItems)
+            { 
+                <tr>
+                    <td>@Html.DisplayFor(model => item.Name)</td>
+                    <td>@Html.DisplayFor(model => item.ApprovalNo)</td>
+                    <td>@Html.DisplayFor(model => item.Comment)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<h4>應歸還項目</h4>
+<div class="container">
+    <table class="table table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SendbackItems.First().Name)</th>
+                <th>@Html.DisplayNameFor(model => model.SendbackItems.First().Price)</th>
+                <th>@Html.DisplayNameFor(model => model.SendbackItems.First().ReturnDate)</th>
+                <th>@Html.DisplayNameFor(model => model.SendbackItems.First().CheckNo)</th>
+                <th>@Html.DisplayNameFor(model => model.SendbackItems.First().Comment)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.SendbackItems)
+            { 
+                <tr>
+                    <td>@Html.DisplayFor(i => item.Name)</td>
+                    <td>@Html.DisplayFor(i => item.Price)</td>
+                    <td>@Html.DisplayFor(i => item.ReturnDate)</td>
+                    <td>@Html.DisplayFor(i => item.CheckNo)</td>
+                    <td>@Html.DisplayFor(i => item.Comment)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
