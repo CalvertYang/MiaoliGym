@@ -10,6 +10,8 @@ namespace MiaoliGym.Controllers
     //【庫存】【體育器材】管理
     public class SportsStuffController : Controller
     {
+        private MiaoliContext db = new MiaoliContext();
+
         // 器材列表
         public ActionResult Index()
         {
