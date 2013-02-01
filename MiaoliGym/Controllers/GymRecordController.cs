@@ -164,16 +164,22 @@ namespace MiaoliGym.Controllers
             SelectList sl = new SelectList(searchColumns, "Value", "Text");
             ViewData["SearchColumns"] = sl;
 
-
-            if (g == 0)
+            var data = gymRecords.Find(i => i.Gym.Id == g);
+            if (data == null)
             {
-                ViewData.Model = gymRecords.ToPagedList(pageNumber: p, pageSize:20);
-                RedirectToAction("Index");
+                return View(gymRecords.ToPagedList(pageNumber: p, pageSize: 20));
             }
-            else
-            {
-                ViewData.Model = gymRecords.Where(i => i.Gym.Id == g).ToPagedList(pageNumber: p, pageSize:20);
-            }
+            return View(gymRecords.Where(i => i.Gym.Id == g).ToPagedList(pageNumber: p, pageSize:20));
+            
+            //if (g == 0)
+            //{
+            //    ViewData.Model = gymRecords.ToPagedList(pageNumber: p, pageSize:20);
+            //    RedirectToAction("Index");
+            //}
+            //else
+            //{
+            //    ViewData.Model = gymRecords.Where(i => i.Gym.Id == g).ToPagedList(pageNumber: p, pageSize:20);
+            //}
 
             // ViewData.Model = gymRecords;
             return View();
